@@ -1,0 +1,58 @@
+﻿@model IEnumerable<GameStoreClient.Helpers.CartUnit>
+@{double allPrice = 0;}
+@if (Model.Count() > 0)
+{
+    <ul class="list-group w-100">
+        @foreach (var item in Model)
+        {
+            <ul class="list-group list-group-horizontal w-100">
+                <li class="list-group-item w-75 font-24 mb-4 rounded-lg shadow-lg">
+                    <div class="d-flex flex-column bg-white">
+                        <div class="d-flex">
+                            <img src="@item.Game.Image" style="width:200px;height:150px;">
+                            <div class="d-flex flex-column ml-4 w-75">
+                                <h3 class="">@item.Game.Name</h3>
+                                <p class="font-16">@item.Game.Genre</p>
+                                <p class="font-16">@item.Game.Price$</p>
+                                <p class="font-16">@item.Game.Amount items</p>
+                            </div>
+                            <p class="align-self-start "><a class="btn btn-warning" onclick="DeleteUnit('@item.Game.Name')"><i class="fas fa-times"></i></a><p>
+                        </div>
+                        <div class="d-flex justify-content-end mr-4 mt-4">
+                            <a class="btn btn-warning mr-2" id="@(item.Game.Name)" onclick="Minus('@item.Game.Name')"><i class="fas fa-minus"></i></a>
+                            <input class="form-control text-center " style="width:7%; height:40px;" id="@(item.Game.Name)_input" value="@item.Amount" max="@item.Game.Amount">
+
+                            <a class="btn btn-warning ml-2 mr-4" name="@(item.Game.Name)" onclick="Plus('@item.Game.Name')"><i class="fas fa-plus"></i></a>
+
+                            <p class="font-24 text-dark">@item.GetAllPrice()$</p>
+                        </div>
+                    </div>
+
+
+                </li>
+                @{allPrice += item.GetAllPrice();}
+                @*
+                    @using (Html.BeginForm("Delete", "Developer", new { id = item.Id }))
+                    {
+                        <button class="w-100 btn btn-primary bg-warning ">Delete</button>
+                    }
+                *@
+            </ul>
+
+        }
+    </ul>
+    <div class="d-flex p-l-10 m-t-10  w-75 justify-content-end">
+        <p class="font-18 text-warning m-0" style="text-decoration:underline; width:65%;"> <a href="/Game/Index">Countine shopping</a></p>
+        <div class="d-flex align-self-end">
+            <span class="rounded-lg border-warning p-2 d-flex" style="border:2px solid red; background:rgba(0,0,0,0.1);">
+                <p class="text-dark m-0 mx-3 my-2" style="font-size:24pt;">@allPrice$</p>
+                <a class="btn btn-warning text-white font-20 mr-3 my-2" href="/Auth/MakeOrder">Make order</a>
+            </span>
+        </div>
+    </div>
+}
+else
+{
+    <h2 class="text-black-50 w-100">Cart is empty:(</h2>
+    <p class="font-18 text-warning m-0" style="text-decoration:underline; width:65%;"> <a href="/Game/Index">Buy Something</a></p>
+}

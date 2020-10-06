@@ -1,0 +1,30 @@
+﻿@model IEnumerable<GameStoreClient.Models.GenreViewModel>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+
+<div class="container mt-4 align-self-center vh-100">
+    <div class="row">
+
+        <ul class="list-group w-100">
+            @foreach (var item in Model)
+            {
+                <ul class="list-group list-group-horizontal w-100">
+                    <li class="list-group-item w-75 font-24">@Html.DisplayFor(modelItem => item.Name)</li>
+                    <li class="list-group-item w-25">
+                        @using (Html.BeginForm("Delete", "Genre", new { id = item.Id }))
+                        {
+                            <button class="w-100 btn btn-primary bg-warning ">Delete</button>
+                        }
+                    </li>
+                </ul>
+
+            }
+        </ul>
+    </div>
+    <p class="text-center mt-4">
+        @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-warning text-white font-24" })
+    </p>
+</div>

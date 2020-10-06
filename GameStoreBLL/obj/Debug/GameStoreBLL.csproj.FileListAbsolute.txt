@@ -1,0 +1,15 @@
+F:\VOVA\ШАГ\ASP.NET\ClassWork\ClassWork2\01\MVCProject\GameStoreBLL\bin\Debug\GameStoreBLL.dll
+F:\VOVA\ШАГ\ASP.NET\ClassWork\ClassWork2\01\MVCProject\GameStoreBLL\bin\Debug\GameStoreBLL.pdb
+F:\VOVA\ШАГ\ASP.NET\ClassWork\ClassWork2\01\MVCProject\GameStoreBLL\bin\Debug\GameStoreDAL.dll
+F:\VOVA\ШАГ\ASP.NET\ClassWork\ClassWork2\01\MVCProject\GameStoreBLL\bin\Debug\EntityFramework.dll
+F:\VOVA\ШАГ\ASP.NET\ClassWork\ClassWork2\01\MVCProject\GameStoreBLL\bin\Debug\GameStoreDAL.pdb
+F:\VOVA\ШАГ\ASP.NET\ClassWork\ClassWork2\01\MVCProject\GameStoreBLL\bin\Debug\GameStoreDAL.dll.config
+F:\VOVA\ШАГ\ASP.NET\ClassWork\ClassWork2\01\MVCProject\GameStoreBLL\bin\Debug\EntityFramework.xml
+F:\VOVA\ШАГ\ASP.NET\ClassWork\ClassWork2\01\MVCProject\GameStoreBLL\obj\Debug\GameStoreBLL.csprojAssemblyReference.cache
+F:\VOVA\ШАГ\ASP.NET\ClassWork\ClassWork2\01\MVCProject\GameStoreBLL\obj\Debug\GameStoreBLL.csproj.CoreCompileInputs.cache
+F:\VOVA\ШАГ\ASP.NET\ClassWork\ClassWork2\01\MVCProject\GameStoreBLL\obj\Debug\GameStoreBLL.csproj.CopyComplete
+F:\VOVA\ШАГ\ASP.NET\ClassWork\ClassWork2\01\MVCProject\GameStoreBLL\obj\Debug\GameStoreBLL.dll
+F:\VOVA\ШАГ\ASP.NET\ClassWork\ClassWork2\01\MVCProject\GameStoreBLL\obj\Debug\GameStoreBLL.pdb
+F:\VOVA\ШАГ\ASP.NET\ClassWork\ClassWork2\01\MVCProject\GameStoreBLL\bin\Debug\Binbin.Linq.PredicateBuilder.dll
+F:\VOVA\ШАГ\ASP.NET\ClassWork\ClassWork2\01\MVCProject\GameStoreBLL\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+F:\VOVA\ШАГ\ASP.NET\ClassWork\ClassWork2\01\MVCProject\GameStoreBLL\bin\Debug\System.Diagnostics.DiagnosticSource.xml

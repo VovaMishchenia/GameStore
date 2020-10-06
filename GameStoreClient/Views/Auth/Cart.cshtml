@@ -1,0 +1,16 @@
+﻿@model IEnumerable<GameStoreClient.Helpers.CartUnit>
+@using System.Web.Optimization
+
+@{
+    ViewBag.Title = "Cart";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+
+<div class="container mt-4 align-self-center" >
+    <div class="row" id="cart">
+        @{
+            Html.RenderPartial("CartUnits");
+        }
+    </div>
+</div>

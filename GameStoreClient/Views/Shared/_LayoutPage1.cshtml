@@ -1,0 +1,35 @@
+﻿
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/style.css" rel="stylesheet" />
+    <link href="~/Content/style2.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="dashboard-main-wrapper">
+        @{
+            Html.RenderPartial("Header");
+        }
+        @RenderBody()
+        
+
+    </div>
+
+
+
+
+    <script src="https://kit.fontawesome.com/39c9a805b6.js" crossorigin="anonymous"></script>
+    <script src="~/Scripts/jquery-3.0.0.min.js"></script>
+    <script src="~/Scripts/popper.min.js"></script>
+    @System.Web.Optimization.Scripts.Render("~/bundles/bootstrap");
+
+    <!-- <script src="~/Scripts/bootstrap.min.js"></script>-->
+    <script src="~/Scripts/main-js.js"></script>
+    <script src="~/Scripts/custom.js"></script>
+</body>
+</html>

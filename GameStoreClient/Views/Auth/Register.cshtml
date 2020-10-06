@@ -1,0 +1,122 @@
+﻿@model GameStoreClient.Models.RegisterViewModel
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<!--
+
+<form class="splash-container vh-100">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="mb-1">Registrations Form</h3>
+                <p>Please enter your user information.</p>
+            </div>
+            <div class="card-body">
+                <div class="form-group">
+                    <input class="form-control form-control-lg" type="text" id="Login" name="Login" required="" placeholder="Username" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <input class="form-control form-control-lg" type="email" name="Email" id="Email" required="" placeholder="E-mail" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <input class="form-control form-control-lg" name="Password" id="Password" type="password" required="" placeholder="Password">
+                </div>
+                <div class="form-group">
+                    <input class="form-control form-control-lg" id="Confirm" name="Confirm" required="" placeholder="Confirm">
+                </div>
+                <div class="form-group pt-2">
+                    <button class="btn btn-block btn-primary" type="submit">Register My Account</button>
+                </div>
+                <div class="form-group">
+                    <label class="custom-control custom-checkbox">
+                        <input class="custom-control-input" type="checkbox"><span class="custom-control-label">By creating an account, you agree the <a href="#">terms and conditions</a></span>
+                    </label>
+                </div>
+                <div class="form-group row pt-0">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mb-2">
+                        <button class="btn btn-block btn-social btn-facebook " type="button">Facebook</button>
+                    </div>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <button class="btn  btn-block btn-social btn-twitter" type="button">Twitter</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer bg-white">
+                <p>Already member? <a href="/Auth/Login" class="text-secondary">Login Here.</a></p>
+            </div>
+        </div>
+    </form>
+    -->
+
+    
+@System.Web.Optimization.Styles.Render("~/Content/custom");
+<div class="container vh-100">
+    <div class="d-flex justify-content-center vh-50">
+        <div class="card mt-4 h-75">
+            <div class="card-header">
+                <h3>Sigin Up</h3>
+            </div>
+            <div class="card-body mb-4 card-height">
+                <form method="post">
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-user text-white"></i></span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="username" id="Login" name="Login" required>
+                    </div>
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-envelope text-white"></i></span>
+                        </div>
+                        <input type="email" class="form-control" placeholder="email" id="Email" name="Email" required>
+                    </div>
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-phone text-white"></i></span>
+                        </div>
+                        <input type="tel" class="form-control" placeholder="phone number" id="Email" name="PhoneNumber" required>
+                    </div>
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-key text-white"></i></span>
+                        </div>
+                        <input type="password" class="form-control" placeholder="password" id="Password" name="Password" required>
+                    </div>
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-check-double text-white"></i></span>
+                        </div>
+                        <input type="password" class="form-control" placeholder="confirm password" id="Confirm" name="Confirm" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="custom-control custom-checkbox">
+                            <input class="custom-control-input" type="checkbox"><span class="custom-control-label">By creating an account, you agree the <a href="#">terms and conditions</a></span>
+                        </label>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="submit" value="Register" class="btn  login_btn align-self-center w-100">
+                    </div>
+                </form>
+            </div>
+
+            <p class="divider-text">
+                <span class="bg-light font-16">OR</span>
+            </p>
+
+            <p>
+                <a href="" class="btn btn-block btn-twitter"> <i class="fab fa-twitter"></i>   Login via Twitter</a>
+                <a href="" class="btn btn-block btn-facebook"> <i class="fab fa-facebook-f"></i>   Login via facebook</a>
+                <a href="" class="btn btn-block btn-google-plus"> <i class="fab fa-google-plus-g"></i>   Login via google</a>
+            </p>
+
+            <div class="card-footer">
+                <div class="d-flex justify-content-center links text-black-50">
+                    Already have an account?<a href="/Auth/Login">Sign in here</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,49 @@
+﻿@model IEnumerable<GameStoreClient.Models.GameViewModel>
+@{
+    ViewBag.Title = "ShowByGenre";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+@{
+    Html.RenderPartial("Sidebar");
+}
+<div class="dashboard-wrapper pt-4">
+    @{
+        Html.RenderPartial("Carousel");
+    }
+    <div class="container">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <a href="/Game/ShowDetails/@item.Id">
+                        <div class="card mt-4">
+                            <img src=" @Html.DisplayFor(modelItem => item.Image)" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h3 class="card-title">@item.Name</h3>
+
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item font-16">@Html.DisplayFor(modelItem => item.Genre)</li>
+                                <li class="list-group-item font-16">@Html.DisplayFor(modelItem => item.Year)</li>
+                                <li class="list-group-item font-16">@Html.DisplayFor(modelItem => item.Price)$</li>
+
+                                <li class="list-group-item font-16 ">
+                                    <a href="/Game/Edit/@item.Id" class="w-100 h-100 btn btn-primary bg-warning font-18">Edit</a>
+                                </li>
+                                <li class="list-group-item font-16 ">
+                                    @using (Html.BeginForm("Delete", "Game", new { id = item.Id }))
+                                    {
+                                        <button class="w-100 btn btn-primary bg-warning ">Delete</button>
+                                    }
+                                </li>
+
+                            </ul>
+                        </div>
+                    </a>
+                </div>
+            }
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,89 @@
+﻿<div class="nav-left-sidebar sidebar-dark">
+    <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 100%;">
+        <div class="menu-list" style="overflow: hidden; width: auto; height: 100%;">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <a class="d-xl-none d-lg-none" href="#">Dashboard</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav flex-column">
+                        <li class="nav-divider">
+                            Filter
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link active font-16" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-1" aria-controls="submenu-1"><i class="fas fa-compact-disc"></i>Genre <span class="badge badge-success">6</span></a>
+                            <div id="submenu-1" class="collapse submenu" style="">
+                                <ul class="nav flex-column">
+                                    @{ foreach (var item in ViewBag.Genres)
+                                        {
+                                            <li class="nav-item">
+                                                <input type="checkbox" onchange="setFilter(event,'Genre')" id="@item" name="@item" value="@item" />
+                                                <label for="@item">@item</label>
+
+                                            </li>
+                                        }}
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link font-16" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-2" aria-controls="submenu-2"><i class="fa fa-fw fa-rocket"></i>Developers</a>
+                            <div id="submenu-2" class="collapse submenu" style="">
+                                <ul class="nav flex-column">
+
+                                    @{ foreach (var item in ViewBag.Developers)
+                                        {
+                                            <li class="nav-item">
+                                                <input type="checkbox" onchange="setFilter(event,'Developer')" id="@item.Name" name="@item.Name" value="@item.Name" />
+                                                <label for="@item.Name">@item.Name</label>
+                                            </li>
+                                        }}
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-divider">
+                            Sorting
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link font-16" href="#" id="toLow" onclick="order(event)"><i class="fa fa-fw fa-arrow-up"></i>From lowest to heighest <span class="badge badge-success">6</span></a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link font-16" href="#" id="toHeigh" onclick="order(event)"><i class="fa fa-fw fa-arrow-down"></i>From heighest to lowest <span class="badge badge-success">6</span></a>
+                        </li>
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <li class="nav-divider">
+                                Edit
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link font-16" href="/Genre/Index"><i class="fas fa-compact-disc"></i>Genre <span class="badge badge-success">6</span></a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link font-16" href="/Developer/Index"><i class="fa fa-fw fa-rocket"></i>Developer <span class="badge badge-success">6</span></a>
+                            </li>
+                            <li class="nav-divider">
+                                Orders
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link font-16" href="/Order/GetAllOrders "><i class="fas fa-compact-disc"></i>All orders <span class="badge badge-success">6</span></a>
+                            </li>
+                        }
+                        @if (!User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-divider">
+                                Account
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link font-16" href="/Auth/Login"><i class="fa fa-fw fa-user"></i>Sign In <span class="badge badge-success">6</span></a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link font-16" href="/Auth/Register"><i class="fas fa-cash-register"></i>Sign Up <span class="badge badge-success">6</span></a>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div class="slimScrollBar" style="background: rgb(0, 0, 0); width: 7px; position: absolute; top: 0px; opacity: 0.4; display: none; border-radius: 7px; z-index: 99; right: 1px; height: 203.892px;"></div><div class="slimScrollRail" style="width: 7px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 1px;"></div>
+    </div>
+</div>

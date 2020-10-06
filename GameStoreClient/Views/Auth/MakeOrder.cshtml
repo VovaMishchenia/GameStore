@@ -1,0 +1,120 @@
+﻿@model IEnumerable<GameStoreClient.Helpers.CartUnit>
+@{
+    ViewBag.Title = "MakeOrder";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<div class="container mt-4 d-flex">
+    <div class="container w-75">
+        <h1 class="font-weight-bolder">Ordering</h1>
+        <hr />
+        <h3 class="font-weight-bolder"><i class="fas fa-info-circle"></i> Contact information:</h3>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputEmail4">Name</label>
+                <input type="text" class="form-control" readonly value="@ViewBag.User.UserName">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputPassword4">Phone Number</label>
+                <input type="text" class="form-control" value="@ViewBag.User.PhoneNumber" readonly>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputAddress">Email</label>
+            <input type="text" class="form-control" value="@ViewBag.User.Email" readonly>
+        </div>
+
+        <div class="d-flex justify-content-between mt-4">
+            <h3 class="mb-0 font-weight-bolder">Orders</h3>
+            <p class="font-18 text-dark">total: @ViewBag.AllPrice$</p>
+        </div>
+        <hr />
+        <p class="w-100 text-right font-16" style="text-decoration:underline;"><a href="/Auth/Cart"><i class="fas fa-edit"></i> Edit Cart</a></p>
+        <ul class="list-group w-100">
+            @foreach (var item in Model)
+            {
+                <ul class="list-group list-group-horizontal w-100">
+                    <li class="list-group-item w-100 font-24 mb-4 rounded-lg shadow-sm">
+                        <div class="d-flex flex-column bg-white">
+                            <div class="d-flex justify-content-around">
+                                <div class="d-flex w-25">
+
+                                    <img src="@item.Game.Image" style="width:100px;height:70px;">
+                                    <h5 class="ml-3">@item.Game.Name</h5>
+                                </div>
+                                <div class="d-flex flex-column">
+                                    <p class="font-14 mb-0">Price:</p>
+                                    <p class="text-dark font-14 font-weight-bolder">@item.Game.Price$</p>
+                                </div>
+                                <div class="d-flex flex-column">
+                                    <p class="font-14 mb-0">Amount:</p>
+                                    <p class="text-dark font-14 font-weight-bolder">@item.Amount</p>
+                                </div>
+                                <div class="d-flex flex-column">
+                                    <p class="font-14 mb-0">Total:</p>
+                                    <p class="text-dark font-14 font-weight-bolder">@item.GetAllPrice()$</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            }
+        </ul>
+        <h3 class="mb-0 font-weight-bolder">Address</h3>
+
+        <hr />
+        @if (ViewBag.User.Address != null)
+        {
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputEmail4">Country</label>
+                    <input type="text" class="form-control" readonly value="@ViewBag.User.Address.Country">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputPassword4">City</label>
+                    <input type="text" class="form-control" value="@ViewBag.User.Address.City" readonly>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputEmail4">Street</label>
+                    <input type="text" class="form-control" readonly value="@ViewBag.User.Address.Street">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputPassword4">Building</label>
+                    <input type="text" class="form-control" value="@ViewBag.User.Address.Building" readonly>
+                </div>
+            </div>
+            <p class="font-18"><a style="text-decoration:underline;" href="/Auth/AddressFromOrder"><i class="fas fa-exchange-alt"></i>Change address</a> </p>
+        }
+        else
+        {
+            <p class="font-18">Please <a style="text-decoration:underline;" href="/Auth/AddressFromOrder">add your address</a> </p>
+        }
+    </div>
+    <aside class="d-flex flex-column w-25 h-25 " style="background:rgba(0,0,0,0);margin-top:5%;position:sticky;top:70px;">
+        <span class="border-warning  p-2" style="border:2px solid red">
+            <h2>Total</h2>
+            <div class="d-flex justify-content-between">
+                <p class="font-14">@ViewBag.AllAmount items in total:</p>
+                <p class="font-14 font-weight-bolder">@ViewBag.AllPrice$</p>
+            </div>
+            <hr />
+            <div class="d-flex justify-content-between">
+                <p class="font-14">To Pay:</p>
+                <p class="font-24 font-weight-bolder">@ViewBag.AllPrice$</p>
+            </div>
+            <hr />
+            @if (ViewBag.User.Address != null)
+            {
+                <a class="btn btn-warning text-white font-22 px-5 ml-2" href="/Order/CreateOrder">Confirm order</a>
+            }
+            else
+            {
+                <a class="btn btn-dark text-white font-22 px-5 ml-2 ">Confirm order</a>
+            }
+        </span>
+    </aside>
+</div>
+

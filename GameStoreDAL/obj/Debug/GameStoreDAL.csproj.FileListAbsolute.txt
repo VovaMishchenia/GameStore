@@ -1,0 +1,12 @@
+F:\VOVA\ШАГ\ASP.NET\ClassWork\ClassWork2\01\MVCProject\GameStoreDAL\bin\Debug\GameStoreDAL.dll.config
+F:\VOVA\ШАГ\ASP.NET\ClassWork\ClassWork2\01\MVCProject\GameStoreDAL\bin\Debug\GameStoreDAL.dll
+F:\VOVA\ШАГ\ASP.NET\ClassWork\ClassWork2\01\MVCProject\GameStoreDAL\bin\Debug\GameStoreDAL.pdb
+F:\VOVA\ШАГ\ASP.NET\ClassWork\ClassWork2\01\MVCProject\GameStoreDAL\bin\Debug\EntityFramework.dll
+F:\VOVA\ШАГ\ASP.NET\ClassWork\ClassWork2\01\MVCProject\GameStoreDAL\bin\Debug\EntityFramework.SqlServer.dll
+F:\VOVA\ШАГ\ASP.NET\ClassWork\ClassWork2\01\MVCProject\GameStoreDAL\bin\Debug\EntityFramework.xml
+F:\VOVA\ШАГ\ASP.NET\ClassWork\ClassWork2\01\MVCProject\GameStoreDAL\bin\Debug\EntityFramework.SqlServer.xml
+F:\VOVA\ШАГ\ASP.NET\ClassWork\ClassWork2\01\MVCProject\GameStoreDAL\obj\Debug\GameStoreDAL.csproj.CoreCompileInputs.cache
+F:\VOVA\ШАГ\ASP.NET\ClassWork\ClassWork2\01\MVCProject\GameStoreDAL\obj\Debug\GameStoreDAL.csproj.CopyComplete
+F:\VOVA\ШАГ\ASP.NET\ClassWork\ClassWork2\01\MVCProject\GameStoreDAL\obj\Debug\GameStoreDAL.dll
+F:\VOVA\ШАГ\ASP.NET\ClassWork\ClassWork2\01\MVCProject\GameStoreDAL\obj\Debug\GameStoreDAL.pdb
+F:\VOVA\ШАГ\ASP.NET\ClassWork\ClassWork2\01\MVCProject\GameStoreDAL\obj\Debug\GameStoreDAL.csprojAssemblyReference.cache

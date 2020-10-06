@@ -1,0 +1,23 @@
+﻿@model IEnumerable<GameStoreDAL.Entities.Order>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+    <div class="container mt-4 ">
+
+        @if (Model.Count() > 0)
+        {
+            <h1 class="font-weight-bolder w-100">Your Orders:</h1>
+            Html.RenderPartial("Orders");
+
+        }
+        else
+        {
+           
+            <h1 class="font-weight-bolder w-100">You don't have any orders:(</h1>
+            <a href="/Game/Index" style="text-decoration:underline;">Buy Something...</a>
+            <hr />
+                
+            }
+    </div>

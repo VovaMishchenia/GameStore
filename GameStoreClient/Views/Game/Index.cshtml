@@ -1,0 +1,32 @@
+﻿@using System.Web.Optimization
+@model IEnumerable<GameStoreClient.Models.GameViewModel>
+
+@Scripts.Render("~/scripts/custom")
+@{
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+@{
+    Html.RenderPartial("Sidebar");
+}
+
+    <div class="dashboard-wrapper pt-4" id="games">
+
+        @{
+            Html.RenderPartial("Carousel");
+        }
+        <div class="container">
+            @{
+                Html.RenderPartial("Cards");
+            }
+            @if (User.IsInRole("Admin"))
+            {
+            <p class="text-center mb-3">
+                @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-warning text-white font-18" })
+            </p>
+            }
+        </div>
+    </div>
+
+
+
+

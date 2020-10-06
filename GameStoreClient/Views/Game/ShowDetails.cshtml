@@ -1,0 +1,65 @@
+﻿@model GameStoreClient.Models.GameViewModel
+@{
+    ViewBag.Title = "ShowDetails";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+@{
+    Html.RenderPartial("Sidebar");
+}
+
+<div class="dashboard-wrapper pt-4">
+    <div class="container flex-wrap">
+        <h1 style="font-size:32pt">@Model.Name</h1>
+        <hr />
+        <div class="d-flex ">
+            <div class="w-50">
+                <img src="@Model.Image" class="w-100 h-100">
+            </div>
+            <div class="w-50 d-flex ml-4 flex-column">
+                <div class="d-flex w-100">
+                    <p style="font-size:36pt;">@Model.Price$</p>
+                    @if (User.Identity.IsAuthenticated && !User.IsInRole("Admin"))
+                    {
+                        if (Model.Amount <= 0)
+                        {
+                            <p><button class="btn btn-primary bg-dark ml-4 " style="font-size:20pt;" disabled><i class="fas fa-shopping-cart"></i>   Buy</button></p>
+                        }
+                        else
+                        {
+                            <p><a class="btn btn-primary bg-warning ml-4 " style="font-size:20pt;" href="/Game/AddToCart?id=@Model.Id" ><i class="fas fa-shopping-cart"></i>   Buy</a></p>
+
+                        }
+                    }
+                </div>
+                @if (Model.Amount <= 0)
+                {
+                    <div class="d-flex w-100 mb-4">
+                        <p class="font-18 text-danger"><span class="font-bold ">Amount: </span>@Model.Amount</p>
+                    </div>
+                }
+                else
+                {
+                    <div class="d-flex w-100 mb-4">
+                        <p class="font-18"><span class="font-bold">Amount: </span>@Model.Amount</p>
+                    </div>
+                }
+                <div class="d-flex w-100 mb-4">
+
+                    <p class="font-22"><span class="font-bold">Genre: </span>@Model.Genre</p>
+                </div>
+                <div class="d-flex w-100 mb-4">
+                    <p class="font-22"><span class="font-bold">Developer: </span>@Model.Developer</p>
+                </div>
+                <div class="d-flex w-100 mb-4">
+                    <p class="font-22"><span class="font-bold">Year: </span>@Model.Year</p>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex w-100 mt-4 flex-wrap mb-4">
+            <p class="font-20 w-100"><span class="font-bold">Description: </span></p>
+            <p class="font-24">@Model.Description</p>
+
+        </div>
+    </div>
+</div>
